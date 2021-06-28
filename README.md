@@ -9,3 +9,6 @@ git add .
 git commit -m "commit message"  
 git remote add origin  
 git push -u origin --all  
+
+git commit --amend  
+git push
