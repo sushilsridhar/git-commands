@@ -11,4 +11,6 @@ git remote add origin
 git push -u origin --all  
 
 git commit --amend  
-git push
+git push  
+
+git branch -D branchname
