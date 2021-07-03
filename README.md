@@ -21,7 +21,11 @@ on branchB: git merge branchA
 on branchB: resolve conflicts if any and, git push  
 Now branchB has branchA changes
 
+**Wrong commit message can be undone with below commands**  
+git commit --amend -m "new commit message"   
 
-git commit --amend  
-git push  
+commit already pushed? then use below commands  
+
+git commit --amend -m "new commit message"  
+git push --force (force flag will overwrite the remote branch with local branch)
 
