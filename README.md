@@ -29,6 +29,9 @@ commit already pushed? then use below commands
 git commit --amend -m "new commit message"  
 git push --force (force flag will overwrite the remote branch with local branch)
 
-### 6. Get origin url details  
+### 6. Get and Set origin url  
 git config --get remote.origin.url  (use this if network connectivity is down)  
-git remote show origin (needs internet to connect to remote repository to get details)
+git remote show origin (needs internet to connect to remote repository to get details)  
+
+git remote get-url origin  
+git remote set-url origin "https://giturl"
