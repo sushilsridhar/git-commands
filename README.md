@@ -34,4 +34,8 @@ git config --get remote.origin.url  (use this if network connectivity is down)
 git remote show origin (needs internet to connect to remote repository to get details)  
 
 git remote get-url origin  
-git remote set-url origin "https://giturl"
+git remote set-url origin "https://giturl"  
+
+### 7. Clone a particular branch of a repository  
+git clone --single-branch --branch branchName "https://giturl"  
+(--single-branch flag prevents fetching of all branches)
