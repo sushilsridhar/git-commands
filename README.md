@@ -38,4 +38,21 @@ git remote set-url origin "https://giturl"
 
 ### 7. Clone a particular branch of a repository  
 git clone --single-branch --branch branchName "https://giturl"  
-(--single-branch flag prevents fetching of all branches)
+(--single-branch flag prevents fetching of all branches)  
+
+### 8. Stage and un-stage files  
+git add . (stages all modified files)  
+git add filename (stages only one file)  
+
+git reset (unstage all files added)    
+git reset HEAD filename (unstage only one file added)  
+
+### 9. Status of files  
+git status  
+git status --short  
+
+### 10. View difference between new and old changes  
+git diff  
+git diff --staged  
+
+
