@@ -55,4 +55,9 @@ git status --short
 git diff  
 git diff --staged  
 
+### 11. View all commits  
+git log  
+git log -1  
+git log --oneline  
+
 
