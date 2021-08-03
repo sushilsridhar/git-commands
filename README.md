@@ -60,7 +60,7 @@ git log
 git log -1  
 git log --oneline  
 
-### 12. Set new password  
+### 12. Set new git username and password  
 git config --global --unset user.password  
 the terminal will now prompt for username and password on new git push  
 
