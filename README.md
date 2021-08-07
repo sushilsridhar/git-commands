@@ -61,6 +61,10 @@ git log -1
 git log --oneline  
 
 ### 12. Set new git username and password  
-git config --global --unset user.password  
+git config --global --unset user.password    
+
+Create a personal token and use it as the password.  
+[how to create personal token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+  
 the terminal will now prompt for username and password on new git push  
 
