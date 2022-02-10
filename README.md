@@ -42,8 +42,10 @@ git clone --single-branch --branch branchName "https://giturl"
 
 ### 8. Stage and un-stage files  
 git add . (stages all modified files)  
-git add filename (stages only one file)  
+git add filename (stages only one file)    
 
+git restore --staged src/    
+or  
 git reset (unstage all files added)    
 git reset HEAD filename (unstage only one file added)  
 
