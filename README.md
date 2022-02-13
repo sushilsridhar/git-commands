@@ -7,10 +7,6 @@ git commit -m "commit message"
 git remote add origin "https://your.repository.url"   
 git push -u origin main  (u flag sets upstream, creates a link between local and remote repository)    
 
-### 2. Remove the uncommited changes and apply it to the same branch again or to a different branch
-git stash  
-git stash apply
-
 ### 3. Delete a branch  
 git branch -D branchname
 
@@ -19,15 +15,7 @@ on branchA: git fetch, git pull
 on branchA: git checkout branchB  
 on branchB: git merge branchA  
 on branchB: resolve conflicts if any and, git push  
-Now branchB has branchA changes
-
-### 5. Wrong commit message can be undone with below commands  
-git commit --amend -m "new commit message"   
-
-commit already pushed? then use below commands  
-
-git commit --amend -m "new commit message"  
-git push --force (force flag will overwrite the remote branch with local branch)
+Now branchB has branchA changes  
 
 ### 6. Get and Set origin url  
 git config --get remote.origin.url  (use this if network connectivity is down)  
@@ -39,15 +27,6 @@ git remote set-url origin "https://giturl"
 ### 7. Clone a particular branch of a repository  
 git clone --single-branch --branch branchName "https://giturl"  
 (--single-branch flag prevents fetching of all branches)  
-
-### 8. Stage and un-stage files  
-git add . (stages all modified files)  
-git add filename (stages only one file)    
-
-git restore --staged src/    
-or  
-git reset (unstage all files added)    
-git reset HEAD filename (unstage only one file added)  
 
 ### 9. Status of files  
 git status  
@@ -70,3 +49,35 @@ Create a personal token and use it as the password.
   
 the terminal will now prompt for username and password on new git push  
 
+### 13. Push without running pre-hook
+Using the --no-verify argument with git commit means that the pre-commit hook won't be executed at all.
+
+# Undo
+
+### 1. Wrong commit message
+git commit --amend -m "new commit message"   
+
+commit already pushed? then use below commands  
+
+git commit --amend -m "new commit message"  
+git push --force (force flag will overwrite the remote branch with local branch)
+
+### 2. Remove the uncommited changes and apply it back again     
+to the same branch or to a different branch  
+
+git stash  
+git stash apply  
+
+### 3. Wrong merge
+
+undo a pushed merge  
+git reset --merge
+
+### 4. Stage and un-stage files  
+git add . (stages all modified files)  
+git add filename (stages only one file)    
+
+git restore --staged src/    
+or  
+git reset (unstage all files added)    
+git reset HEAD filename (unstage only one file added)  
