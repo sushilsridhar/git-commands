@@ -49,6 +49,13 @@ Create a personal token and use it as the password.
   
 the terminal will now prompt for username and password on new git push  
 
+set username and email using,  
+git config --global user.name "John Doe"  
+git config --global user.email "johndoe@example.com"    
+
+git config --global --get user.name  
+git config --global --get user.email   
+
 ### 13. Push without running pre-hook
 Using the --no-verify argument with git commit means that the pre-commit hook won't be executed at all.
 
