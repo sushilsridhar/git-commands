@@ -1,11 +1,47 @@
-# git-commands
+# Setup a git repository
 
-### 1. Setup a git repository
+```
 git init  
 git add .  
 git commit -m "commit message"    
 git remote add origin "https://your.repository.url"   
-git push -u origin main  (u flag sets upstream, creates a link between local and remote repository)    
+git push -u origin main  (u flag sets upstream, creates a link between local and remote repository)   
+```
+<ins>origin</ins>   
+origin is just a name, single repository can point to two different remote repository     
+
+```
+git remote add origintwo "https://your.repository.url" 
+```     
+
+# Get and Set origin url  
+```
+git config --get remote.origin.url  (use this if network connectivity is down)  
+git remote show origin (needs internet to connect to remote repository to get details)  
+
+git remote get-url origin  
+git remote set-url origin "https://giturl"  
+```
+
+# Set new git username and password  
+
+```
+git config --global --unset user.password    
+```
+Create a personal token and use it as the password.  
+[how to create personal token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+  
+the terminal will now prompt for username and password on new git push  
+
+set username and email using,  
+
+```
+git config --global user.name "John Doe"  
+git config --global user.email "johndoe@example.com"    
+
+git config --global --get user.name  
+git config --global --get user.email   
+```
 
 ### 3. Delete a branch  
 git branch -D branchname
@@ -17,12 +53,7 @@ on branchB: git merge branchA
 on branchB: resolve conflicts if any and, git push  
 Now branchB has branchA changes  
 
-### 6. Get and Set origin url  
-git config --get remote.origin.url  (use this if network connectivity is down)  
-git remote show origin (needs internet to connect to remote repository to get details)  
 
-git remote get-url origin  
-git remote set-url origin "https://giturl"  
 
 ### 7. Clone a particular branch of a repository  
 git clone --single-branch --branch branchName "https://giturl"  
@@ -41,27 +72,13 @@ git log
 git log -1  
 git log --oneline  
 
-### 12. Set new git username and password  
-git config --global --unset user.password    
-
-Create a personal token and use it as the password.  
-[how to create personal token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-  
-the terminal will now prompt for username and password on new git push  
-
-set username and email using,  
-git config --global user.name "John Doe"  
-git config --global user.email "johndoe@example.com"    
-
-git config --global --get user.name  
-git config --global --get user.email   
 
 ### 13. Push without running pre-hook
 Using the --no-verify argument with git commit means that the pre-commit hook won't be executed at all.
 
 # Undo
 
-### 1. Wrong commit message
+### Wrong commit message or add new changes to old commit and diverge
 git commit --amend -m "new commit message"   
 
 commit already pushed? then use below commands  
@@ -69,7 +86,7 @@ commit already pushed? then use below commands
 git commit --amend -m "new commit message"  
 git push --force (force flag will overwrite the remote branch with local branch)
 
-### 2. Remove the uncommited changes and apply it back again     
+### Remove the uncommited changes and apply it back again     
 to the same branch or to a different branch  
 
 git stash  
