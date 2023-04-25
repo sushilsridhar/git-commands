@@ -43,6 +43,46 @@ git config --global --get user.name
 git config --global --get user.email   
 ```
 
+# Undo
+
+### Wrong commit message or add new changes to old commit and diverge - check
+
+```
+git commit --amend -m "new commit message"   
+```
+commit already pushed? then use below commands  
+
+```
+git commit --amend -m "new commit message"  
+git push --force (force flag will overwrite the remote branch with local branch) - do not do this
+```
+
+### Remove the uncommited changes and apply it back again     
+to the same branch or to a different branch  
+
+```
+git stash  
+git stash apply  
+```
+
+### Wrong merge - check
+
+undo a pushed merge  
+```
+git reset --merge
+```
+
+### Stage and un-stage files  
+
+```
+git add . (stages all modified files)  
+git add filename (stages only one file)    
+
+git restore --staged src/     
+```
+
+# Check
+
 ### 3. Delete a branch  
 git branch -D branchname
 
@@ -75,33 +115,3 @@ git log --oneline
 
 ### 13. Push without running pre-hook
 Using the --no-verify argument with git commit means that the pre-commit hook won't be executed at all.
-
-# Undo
-
-### Wrong commit message or add new changes to old commit and diverge
-git commit --amend -m "new commit message"   
-
-commit already pushed? then use below commands  
-
-git commit --amend -m "new commit message"  
-git push --force (force flag will overwrite the remote branch with local branch)
-
-### Remove the uncommited changes and apply it back again     
-to the same branch or to a different branch  
-
-git stash  
-git stash apply  
-
-### 3. Wrong merge
-
-undo a pushed merge  
-git reset --merge
-
-### 4. Stage and un-stage files  
-git add . (stages all modified files)  
-git add filename (stages only one file)    
-
-git restore --staged src/    
-or  
-git reset (unstage all files added)    
-git reset HEAD filename (unstage only one file added)  
