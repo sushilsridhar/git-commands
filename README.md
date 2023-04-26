@@ -54,7 +54,8 @@ commit already pushed? then use below commands
 
 ```
 git commit --amend -m "new commit message"  
-git push --force (force flag will overwrite the remote branch with local branch) - do not do this
+git push --force 
+(force flag will overwrite the remote branch with local branch) - do not do this
 ```
 
 ### Remove the uncommited changes and apply it back again     
