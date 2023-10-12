@@ -45,6 +45,17 @@ git config --global --get user.email
 
 # Undo
 
+### Undo local commit 
+
+```
+git reset soft HEAD~
+
+git reset soft HEAD~2
+
+head points to latest commit
+2 means - undo last 2 commits
+```
+
 ### Wrong commit message or add new changes to old commit and diverge - check
 
 ```
